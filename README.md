@@ -475,8 +475,6 @@ Implemented with Tailwind CSS, ensuring a great user experience across:
 Distributed under the MIT License. See `LICENSE` for more information.
 
 ## 📞 Contact
+Dandy Wildan - @wildandandy72@gmail.com
 
-Your Name - [Your Email]
-
-Project Link: [https://github.com/yourusername/indonesian-tobacco](https://github.com/yourusername/indonesian-tobacco)
-
+Project Link: https://github.com/DandyWildan95/milestone-2-iteration-Dandy.git
