@@ -15,9 +15,9 @@
 10. [Performance Optimization](#-performance-optimization)
 11. [Deployment](#-deployment)
 
-## 🌟 Project Overview
+## �� Project Overview
 
-Indonesian Tobacco is a sophisticated e-commerce web application designed to showcase and sell premium tobacco products from Indonesia. The project demonstrates modern web development practices using Next.js, React, and TypeScript.
+Escuela Marketplace is a modern e-commerce web application built with Next.js, React, and TypeScript. The project demonstrates best practices in web development, including responsive design, state management, and API integration. It features a comprehensive product catalog, shopping cart functionality, and user authentication.
 
 ## 🚀 Technologies
 
@@ -43,33 +43,42 @@ src/
 ├── components/           # Reusable React components
 │   ├── Layout.tsx        # Main layout component
 │   ├── Header.tsx        # Navigation header
-│   ├── Footer.tsx        # Page footer
+│   ├── Navbar.tsx        # Navigation bar
+│   ├── LoadingSpinner.tsx # Loading indicator
+│   ├── ErrorBoundary.tsx # Error handling component
 │   └── ...
 │
 ├── pages/                # Next.js page components
-│   ├── index.tsx         # Home page
+│   ├── index.page.tsx    # Home page
 │   ├── products/         # Product-related pages
 │   │   ├── index.tsx     # Product listing page
-│   │   └── [id].tsx      # Individual product detail page
+│   │   ├── products.page.tsx # Products page
+│   │   └── product-detail.page.tsx # Product detail page
+│   ├── cart.page.tsx     # Shopping cart page
+│   ├── register.page.tsx # User registration
 │   └── ...
 │
-├── services/             # API service layers
-│   ├── ProductService.ts # Product data fetching logic
-│   └── ...
+├── api/                  # API integration
+│   ├── Api.ts           # API client
+│   └── index.ts         # API exports
 │
 ├── hooks/                # Custom React hooks
-│   ├── useApi.ts         # Generic API fetching hook
+│   ├── useApi.ts        # Generic API fetching hook
+│   ├── useCart.tsx      # Shopping cart functionality
 │   └── ...
 │
 ├── types/                # TypeScript type definitions
-│   ├── product.ts        # Product-related types
-│   └── ...
+│   ├── product.ts       # Product-related types
+│   ├── global.ts        # Global type definitions
+│   └── index.ts         # Type exports
 │
 ├── styles/               # Global styles
-│   └── globals.css       # Tailwind CSS entry point
+│   └── globals.css      # Global CSS styles
 │
-└── __tests__/            # Test suites
-    ├── Api.test.tsx      # API integration tests
+└── __tests__/           # Test suites
+    ├── Api.test.tsx     # API integration tests
+    ├── App.test.tsx     # App component tests
+    ├── HomePage.test.tsx # Home page tests
     └── ...
 ```
 
@@ -78,23 +87,26 @@ src/
 ### 1. Layout Component (`src/components/Layout.tsx`)
 - Provides consistent page structure
 - Handles global navigation
-- Manages category fetching
-- Implements error boundaries
+- Implements responsive design
+- Manages loading states
 
-### 2. Home Page (`src/pages/index.tsx`)
-- Displays featured products
-- Implements responsive product cards
-- Handles loading and error states
+### 2. Home Page (`src/pages/index.page.tsx`)
+- Displays welcome message
+- Provides navigation to products
+- Implements responsive design
+- Handles loading states
 
-### 3. Product Service (`src/services/ProductService.ts`)
-- Abstracts API communication
-- Provides methods for fetching products
-- Implements error handling
+### 3. Products Pages
+- Product listing page (`src/pages/products/products.page.tsx`)
+- Product detail page (`src/pages/products/product-detail.page.tsx`)
+- Implements product filtering and search
+- Handles product data fetching
 
-### 4. Custom API Hook (`src/hooks/useApi.ts`)
-- Generic data fetching hook
-- Supports transforming API responses
-- Manages loading and error states
+### 4. Cart Functionality (`src/components/useCart.tsx`)
+- Manages shopping cart state
+- Handles add/remove items
+- Calculates total price
+- Persists cart data
 
 ## 🔄 Development Workflow
 
@@ -102,7 +114,7 @@ src/
 1. Clone the repository
 2. Install dependencies: `npm install`
 3. Run development server: `npm run dev`
-4. Open `http://localhost:3001`
+4. Open `http://localhost:3000`
 
 ### Available Scripts
 - `npm run dev`: Start development server
@@ -110,6 +122,19 @@ src/
 - `npm run start`: Run production build
 - `npm test`: Run test suite
 - `npm run lint`: Run code linter
+- `npm run test:coverage`: Generate test coverage report
+
+### Testing
+The project uses Jest and React Testing Library for testing. Key test files include:
+- `src/__tests__/HomePage.test.tsx`: Tests for the home page
+- `src/__tests__/ProductList.test.tsx`: Tests for product listing
+- `src/__tests__/Api.test.tsx`: Tests for API integration
+
+### Code Quality
+- ESLint for code linting
+- Prettier for code formatting
+- TypeScript for type safety
+- Jest for test coverage
 
 ## 🌐 API Integration
 
